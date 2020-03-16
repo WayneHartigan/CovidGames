@@ -13,19 +13,26 @@
 
     <nav class="navbar navbar-default">
       <div class="container">
+        
         <div class="navbar-header">
           <%= link_to "Covid Games", root_path, class: "navbar-brand" %>
-
-          <ul class="nav navbar-nav">
-            <% if user_signed_in? %>
-              <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-            <% else %>
-              <li> <%= link_to "Sign In", new_user_registration_path %></li>
-              <li> <%= link_to "Sign Up", new_user_session_path %></li>
-            <% end %>
-          </ul>
-
         </div>
+
+        <ul class="nav navbar-nav">
+          <% if user_signed_in? %>
+            <li> <%= link_to "Add Game Review", new_game_path %></li>
+          <% end %>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+            <li> <%= link_to "Log Out", destroy_user_session_path, method: :delete, data: {confirm: "Log Out?"} %></li>
+          <% else %>
+            <li> <%= link_to "Log In", new_user_session_path %></li>
+            <li> <%= link_to "Sign Up", new_user_registration_path %></li>
+          <% end %>
+        </ul>
+
       </div>
     </nav>
 
