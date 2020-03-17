@@ -2,7 +2,12 @@ class GamesController < ApplicationController
     before_action :find_game, only: [:show, :edit, :update, :destroy]
 
     def index
-        @games = Game.all.order("created_at DESC")
+        if params[:category].blank?
+            @games = Game.all.order("created_at DESC")
+        else
+            @category_id = Category.find_by(name: params[:category]).id
+            @games = Game.where(:category_id => @category_id).order("created_at DESC")
+        end
     end
 
     def new
@@ -24,9 +29,11 @@ class GamesController < ApplicationController
     end
 
     def edit 
+        @categories = Category.all.map{ |c| [c.name, c.id] }
     end
 
     def update 
+        @game.category_id = params[:category_id]
         if @game.update(game_params)
             redirect_to game_path(@game)
         else 
@@ -42,7 +49,7 @@ class GamesController < ApplicationController
 
     private 
         def game_params
-            params.require(:game).permit(:title, :description, :developer)
+            params.require(:game).permit(:title, :description, :developer, :category_id)
         end
 
         def find_game
