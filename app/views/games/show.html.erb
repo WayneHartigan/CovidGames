@@ -14,10 +14,11 @@
     <div class="col-md-4">
         
         <%= render @game.reviews %>
-
-        <div>
-            <%= link_to "Add Review", new_game_review_path(@game) %>
-        </div>
+        <% if user_signed_in? %>
+            <div>
+                <%= link_to "Add Review", new_game_review_path(@game) %>
+            </div>
+        <% end %>
     </div>
 </div>
 

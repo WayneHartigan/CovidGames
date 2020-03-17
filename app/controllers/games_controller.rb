@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
     before_action :find_game, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_user!, only: [:new, :edit]
 
     def index
         if params[:category].blank?
