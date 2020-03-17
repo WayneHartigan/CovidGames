@@ -3,5 +3,6 @@
     <%= f.input :description %>
     <%= f.input :developer %>
     <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Genre") %>
+    <%= f.file_field :game_img %>
     <%= f.button :submit %>
 <% end %>

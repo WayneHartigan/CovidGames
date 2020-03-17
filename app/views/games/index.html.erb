@@ -3,9 +3,14 @@
 <% if @games.count == 0 %>
     <h3>Sorry There are no games</h3>
 <% else %>
-    <% @games.each do |game| %>
-        <h1><%= link_to game.title, game_path(game) %></h1>
-        <h3><%= game.developer %></h3>
-        <p><%= game.description %></p>
-    <% end %>
+    <div class="row">
+        <% @games.each do |game| %>
+            <div class="col-md-3">
+                <a href="/games/<%= game.id %>">
+                    <%= image_tag game.game_img.url(:game_index), class:"game" %>
+                </a>
+                <h3><%= game.title %></h3>
+            </div>
+        <% end %>
+    </div>
 <% end %>
