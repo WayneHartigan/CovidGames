@@ -1,5 +1,11 @@
-<% @games.each do |game| %>
-    <h1><%= link_to game.title, game_path(game) %></h1>
-    <h3><%= game.developer %></h3>
-    <p><%= game.description %></p>
+<h1 class="current-category"><%= params[:category] %></h1>
+
+<% if @games.count == 0 %>
+    <h3>Sorry There are no games</h3>
+<% else %>
+    <% @games.each do |game| %>
+        <h1><%= link_to game.title, game_path(game) %></h1>
+        <h3><%= game.developer %></h3>
+        <p><%= game.description %></p>
+    <% end %>
 <% end %>
