@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/WayneHartigan/Censor-Yourself
+  revision: 5277d1a87a3b225d0d24aaa63e95bbdfaeeb891a
+  specs:
+    censor_yourself (1.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -233,6 +239,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.4, >= 3.4.1)
   byebug
   capybara (>= 2.15)
+  censor_yourself!
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise (~> 4.7, >= 4.7.1)

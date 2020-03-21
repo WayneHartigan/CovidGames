@@ -1,5 +1,5 @@
 <p>review.rating</p>
-<p><%= review.comment %></p>
+<p><%= CensorYourself.check(review.comment) %></p>
 
 <% if user_signed_in? %>
     <% if review.user_id == current_user.id %>

@@ -3,10 +3,10 @@
         <%= image_tag @game.game_img.url(:game_show), class: "game-show" %>
     </div>
     <div class="col-md-8">
-        <h2><%= @game.title %></h2>
-        <p><%= @game.developer %></p>
-        <p><%= @game.category.name %></p>
-        <p><%= @game.description %></p>
+        <h2><%= CensorYourself.check(@game.title) %></h2>
+        <p><%= CensorYourself.check(@game.developer) %></p>
+        <p><%= CensorYourself.check(@game.category.name) %></p>
+        <p><%= CensorYourself.check(@game.description) %></p>
     </div>
 </div>
 
