@@ -3,16 +3,19 @@
         <%= image_tag @game.game_img.url(:game_show), class: "game-show" %>
     </div>
     <div class="col-md-8">
-        <h2><%= CensorYourself.check(@game.title) %></h2>
+        <h1><b><%= CensorYourself.check(@game.title) %></b></h2>
+        <h4>Developer:</h4>
         <p><%= CensorYourself.check(@game.developer) %></p>
+        <h4>Genre:</h4>
         <p><%= CensorYourself.check(@game.category.name) %></p>
+        <h4>Description:</h4>
         <p><%= CensorYourself.check(@game.description) %></p>
     </div>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        
+        <h3>Reviews:</h3>
         <%= render @game.reviews %>
         <% if user_signed_in? %>
             <div>
@@ -21,8 +24,6 @@
         <% end %>
     </div>
 </div>
-
-<%= link_to "Back", root_path %>
 
 <% if user_signed_in? %>
     <% if @game.user_id == current_user.id %>
