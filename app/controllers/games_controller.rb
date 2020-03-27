@@ -11,6 +11,17 @@ class GamesController < ApplicationController
         end
     end
 
+    def search
+        if params[:search].blank?
+          redirect_to games_path
+        elsif params[:search]
+          @parameter = params[:search].downcase
+          @search_results = Game.all.where("title like ?", "#{@parameter}%")
+        else
+          flash.alert = "Nothing found"
+        end
+    end
+
     def new
         @game = current_user.games.build
         @categories = Category.all.map{ |c| [c.name, c.id] }

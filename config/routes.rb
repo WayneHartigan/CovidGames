@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   resources :games do
     resources :reviews
   end
+  get '/search' => 'games#search', :as => 'search_page'
   root 'games#index'
 end
