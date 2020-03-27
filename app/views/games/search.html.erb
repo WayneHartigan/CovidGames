@@ -4,11 +4,11 @@
     <div class="row">
         <% @search_results.each do |game| %>
             <div class="col-md-3">
-                    <a href="/games/<%= game.id %>">
-                        <%= image_tag game.game_img.url(:game_index), class:"game" %>
-                    </a>
-                    <h3><%= CensorYourself.check(game.title) %></h3>
-                </div>
+                <a href="/games/<%= game.id %>">
+                    <%= image_tag game.game_img.url(:game_index), class:"game" %>
+                </a>
+                <h3><%= CensorYourself.check(game.title) %></h3>
+            </div>
         <% end %>
     </div>
 <% end %>
