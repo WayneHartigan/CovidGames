@@ -9,7 +9,7 @@
                 <a href="/games/<%= game.id %>">
                     <%= image_tag game.game_img.url(:game_index), class:"game" %>
                 </a>
-                <h3><%= CensorYourself.check(game.title) %></h3>
+                <h3 style="text-transform: capitalize;"><%= CensorYourself.check(game.title) %></h3>
             </div>
         <% end %>
     </div>

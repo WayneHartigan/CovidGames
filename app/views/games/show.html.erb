@@ -3,11 +3,11 @@
         <%= image_tag @game.game_img.url(:game_show), class: "game-show" %>
     </div>
     <div class="col-md-8">
-        <h1><b><%= CensorYourself.check(@game.title) %></b></h2>
+        <h1 style="text-transform: capitalize;"><b><%= CensorYourself.check(@game.title) %></b></h2>
         <h4>Developer:</h4>
-        <p><%= CensorYourself.check(@game.developer) %></p>
+        <p style="text-transform: capitalize;"><%= CensorYourself.check(@game.developer) %></p>
         <h4>Genre:</h4>
-        <p><%= CensorYourself.check(@game.category.name) %></p>
+        <p style="text-transform: capitalize;"><%= CensorYourself.check(@game.category.name) %></p>
         <h4>Description:</h4>
         <p><%= CensorYourself.check(@game.description) %></p>
     </div>
