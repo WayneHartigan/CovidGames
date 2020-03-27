@@ -1,7 +1,7 @@
 <h1 class="current-category"><%= params[:category] %></h1>
 
 <% if @games.count == 0 %>
-    <h3>Sorry There are no games</h3>
+    <h3>Sorry, there are no games at this time.</h3>
 <% else %>
     <div class="row">
         <% @games.each do |game| %>
