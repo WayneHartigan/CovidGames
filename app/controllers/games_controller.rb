@@ -4,10 +4,10 @@ class GamesController < ApplicationController
 
     def index
         if params[:category].blank?
-            @games = Game.all.order("created_at DESC")
+            @games = Game.all.order("title DESC")
         else
             @category_id = Category.find_by(name: params[:category]).id
-            @games = Game.where(:category_id => @category_id).order("created_at DESC")
+            @games = Game.where(:category_id => @category_id).order("title DESC")
         end
     end
 
