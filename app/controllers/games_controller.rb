@@ -16,7 +16,7 @@ class GamesController < ApplicationController
           redirect_to games_path
         elsif params[:search]
           @parameter = params[:search].downcase
-          @search_results = Game.all.where("title like ?", "#{@parameter}%")
+          @search_results = Game.all.where("lower(title) like ?", "#{@parameter}%")
         else
           flash.alert = "Nothing found"
         end
