@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project created for Cloud Application Development in Final Year Computing module.
 
-Things you may want to cover:
+Crown Games is designed to allow users to review video games and share feedback on current their favourite (or least favourite) video games.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+*Developed in Ruby v2.7
+*Developed in Ruby on Rails v5.2
+*Hosted on Heroku @ https://intense-beyond-53421.herokuapp.com/
